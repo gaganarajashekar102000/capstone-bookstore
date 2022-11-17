@@ -25,13 +25,13 @@ node(){
 
     stage("Building the Docker image"){ 
         sh 'docker build -t bookstore.app.v1.$BUILD_ID /inet/projects'
-        sh 'docker tag bookstore.app.v1.$BUILD_ID steju480/bookstore.app.v1.$BUILD_ID'
-        sh 'docker tag bookstore.app.v1.$BUILD_ID steju480/bookstore.app.v1'
+        sh 'docker tag bookstore.app.v1.$BUILD_ID gaganarajashekar/bookstore.app.v1.$BUILD_ID'
+        sh 'docker tag bookstore.app.v1.$BUILD_ID gaganarajashekar/bookstore.app.v1'
     }
     stage("Docker image push"){
         withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'user')]) {
             sh "docker login -u ${user} -p ${password}"
-            sh 'docker login -u steju480 -p Steju@1997'
+            sh 'docker login -u gaganarajashekar -p rakshith@123'
             sh 'docker push steju480/bookstore.app.v1.$BUILD_ID'
             sh 'docker push steju480/bookstore.app.v1'
             sh 'docker rmi steju480/bookstore.app.v1.$BUILD_ID'
