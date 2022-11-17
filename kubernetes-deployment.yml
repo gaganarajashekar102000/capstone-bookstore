@@ -38,7 +38,7 @@ spec:
         app: Prod
     spec:
       containers:
-      - image: gaganarajaashekar/bookstore.app.v1:latest
+      - image: gaganarajashekar/bookstore.app.v1:latest
         name: bookstore
         ports:
         - containerPort: 8080
