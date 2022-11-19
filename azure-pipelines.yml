@@ -12,11 +12,11 @@ pool:
 resources:
   pipelines:
   - pipeline: deploy-to-prod # Name of the pipeline resource.
-    source: 'Intellipaat-Maven-CI' # The name of the pipeline referenced by this pipeline resource.
+    source: 'Socgen-project-dev' # The name of the pipeline referenced by this pipeline resource.
     trigger:
       branches:
-      - master
-      
+      - develop
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
